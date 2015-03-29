@@ -1,0 +1,44 @@
+
+<ul>
+
+<li><a href="#/categorierecette">par categorie</a></li>
+<li>par categorie</li>
+</ul>
+<h1>Recettes</h1>
+
+<br/>  <br/>  <br/>  
+
+</form>
+<div ng-repeat="recette in recettes | orderBy:id_recette">
+  <a href="" ng-click="montrerRe7=!montrerRe7">{{recette.titre}}</a>
+  <div ng-show="montrerRe7">
+    <div ng-bind-html="showHtml(recette.value)">
+    </div>
+    <p>{{recette.titre}}<p>
+    <p><img src="{{urlImg}}{{recette.img}}" style="height:140px; width:140px;"><p>
+    <p>{{recette.categorie}}<p>
+
+    <div ng-repeat="ingredient in recette.ingredients">
+      <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}<p>
+    </div>
+    
+    <div ng-repeat="produit in recette.produits">
+      <p>{{produit.value_produit}}<br/>
+       <img src="..{{produit.img}}" style="height:140px; width:140px;">
+       {{produit.img}}
+       <p>
+    </div>
+
+    <div ng-repeat="commentaire in recette.commentaires">
+      <p>
+        {{commentaire.pseudo}}<br/>
+        {{commentaire.update}}<br/>
+        <div ng-bind-html="showHtml(commentaire.value)"></div>
+       <p>
+    </div>
+
+
+
+  </div>
+
+</div>
