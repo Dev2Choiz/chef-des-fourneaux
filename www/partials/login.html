@@ -1,5 +1,5 @@
 
-<h1>Home</h1>
+<!-- <h1>Home</h1>
 
 <form  ng-submit="submit(); submitted=true">
         <input type="text" ng-model="inputMail" value="mail1@hotmail.com" />
@@ -12,5 +12,24 @@
    <hr />
    <h4>{{ user.nom }}</h4>
    <hr />
+</div> -->
+
+
+<div class="list" ng-controller"UserController">
+  <label class="item item-input">
+      <span class="input-label" ng-model="inputMail">Mail</span>
+      <input type="text">
+  </label>
+  <label class="item item-input">
+      <span class="input-label" ng-model="inputPassword">Mot de passe</span>
+      <input type="password">
+  </label>
+  <button class="button button-full button-positive" type="submit">
+    Se connecter
+  </button>
 </div>
+
+
+
+
 
