@@ -15,21 +15,17 @@
 </div> -->
 
 
-<div class="list" ng-controller"UserController">
-  <label class="item item-input">
-      <span class="input-label" ng-model="inputMail">Mail</span>
-      <input type="text">
-  </label>
-  <label class="item item-input">
-      <span class="input-label" ng-model="inputPassword">Mot de passe</span>
-      <input type="password">
-  </label>
-  <button class="button button-full button-positive" type="submit">
-    Se connecter
-  </button>
+<form  ng-submit="submit(); submitted=true">
+    <label class="item item-input">
+    </label>
+    <label class="item item-input">
+    </label>
+    <button class="button button-full button-positive" type="submit">
+      Se connecter
+    </button>
+  
+</form>
 </div>
-
-
 
 
 
