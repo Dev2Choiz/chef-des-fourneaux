@@ -11,7 +11,7 @@ application.controller('GlobalUserController', function ($scope, $sce, UserServi
 		if(LocalStorageService.isKey('user')){
 			return $sce.trustAsHtml("Bienvenue "+$scope.GLuser.pseudo);
 		}else{
-			return $sce.trustAsHtml("<a href='#/login'>se Connecter</a>");
+			return $sce.trustAsHtml("<a href='#/login'>se connecter</a>");
 		}
 		$scope.statusCo=verfierConnection();
 	}

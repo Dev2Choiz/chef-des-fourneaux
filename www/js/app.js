@@ -37,7 +37,7 @@ var app = {
 
 app.initialize();
 
-var application = angular.module('application', ['ionic','ngRoute', 'ngTouch'])
+var application = angular.module('application', ['ionic', 'ngTouch'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -52,36 +52,34 @@ var application = angular.module('application', ['ionic','ngRoute', 'ngTouch'])
   });
 })
 
-application.config(function($routeProvider){
-    $routeProvider
-        .when('/home', {
-            templateUrl : 'partials/home.html',
-            controller : 'HomeController'
-        })
-        .when('/position', {
-            templateUrl : 'partials/position.html',
-            controller : 'PositionController'
-        })
-        .when('/login', {
+
+application.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+    $stateProvider
+        .state('login', {
+            url: '/login',
             templateUrl : 'partials/login.html',
-            controller : 'UserController'
         })
-        .when('/recettes', {
+        .state('home', {
+            url: '/home',
+            templateUrl : 'partials/home.html',
+        })
+        .state('position', {
+            url: '/position',
+            templateUrl : 'partials/position.html',
+        })
+        .state('recettes', {
+            url: '/recettes',
             templateUrl : 'partials/recettes.html',
-            controller : 'RecetteAllController'
         })
-        .when('/categorierecette', {
+        .state('categorierecette', {
+            url: '/categorierecette',
             templateUrl : 'partials/categorierecette.html',
-            controller : 'CategorieRecetteController'
         })
-        .when('/todolist', {
+        .state('todolist', {
+            url: '/todolist',
             templateUrl : 'partials/todolist.html',
-            controller : 'TodoListController'
-        })
-        .otherwise({
-            redirectTo : '/home'
         });
 
-        // Ici, on définit les différentes pages et on les associent 
-        // à leur controller
-});
+    $urlRouterProvider
+        .otherwise('/login');
+}]);
