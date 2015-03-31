@@ -24,7 +24,7 @@
     
     <div ng-repeat="produit in recette.produits">
       <p>{{produit.value_produit}}<br/>
-       <img src="..{{produit.img}}" style="height:140px; width:140px;">
+       <img src="{{urlImg}}{{produit.img}}" style="height:140px; width:140px;">
        {{produit.img}}
        <p>
     </div>

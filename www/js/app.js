@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 
 urlWebService="http://localhost/webservice/public/index.php";
-urlImg="..";
+urlImg="../../img/";
 
 
 
@@ -58,26 +58,32 @@ application.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         .state('login', {
             url: '/login',
             templateUrl : 'partials/login.html',
+            controller : 'UserController',
         })
         .state('home', {
             url: '/home',
             templateUrl : 'partials/home.html',
+            controller : 'HomeController',
         })
         .state('position', {
             url: '/position',
             templateUrl : 'partials/position.html',
+            controller : 'PositionController',
         })
-        .state('recettes', {
-            url: '/recettes',
-            templateUrl : 'partials/recettes.html',
+        .state('recetteAll', {
+            url: '/recetteAll',
+            templateUrl : 'partials/recetteAll.html',
+            controller : 'RecetteAllController',
         })
         .state('categorierecette', {
             url: '/categorierecette',
             templateUrl : 'partials/categorierecette.html',
+            controller : 'CategorieRecetteController',
         })
         .state('todolist', {
             url: '/todolist',
             templateUrl : 'partials/todolist.html',
+            controller : 'TodoListController',
         });
 
     $urlRouterProvider
