@@ -1,5 +1,41 @@
 <ion-view view-title="Search">
-  <ion-content>
+  <ion-content class="padding">
     <h1>Search</h1>
+    <p>
+        <a class="button icon icon-right ion-chevron-right" href="#/app/facts">Scientific Facts</a>
+      </p>
   </ion-content>
 </ion-view>
+
+<script id="templates/facts.html" type="text/ng-template">
+  <ion-view view-title="Facts">
+    <ion-content class="padding">
+      <p>Banging your head against a wall uses 150 calories an hour.</p>
+      <p>Dogs have four toes on their hind feet, and five on their front feet.</p>
+      <p>The ant can lift 50 times its own weight, can pull 30 times its own weight and always falls over on its right side when intoxicated.</p>
+      <p>A cockroach will live nine days without it's head, before it starves to death.</p>
+      <p>Polar bears are left handed.</p>
+      <p>
+        <a class="button icon ion-home" href="#/app/search"> Home</a>
+        <a class="button icon icon-right ion-chevron-right" href="#/app/facts2">More Facts</a>
+      </p>
+    </ion-content>
+  </ion-view>
+</script>
+
+<script id="templates/facts2.html" type="text/ng-template">
+  <ion-view view-title="Also Factual">
+    <ion-content class="padding">
+      <p>111,111,111 x 111,111,111 = 12,345,678,987,654,321</p>
+      <p>1 in every 4 Americans has appeared on T.V.</p>
+      <p>11% of the world is left-handed.</p>
+      <p>1 in 8 Americans has worked at a McDonalds restaurant.</p>
+      <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
+      <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
+      <p>
+        <a class="button icon ion-home" href="#/app/search"> Home</a>
+        <a class="button icon ion-chevron-left" href="#/app/facts"> Scientific Facts</a>
+      </p>
+    </ion-content>
+  </ion-view>
+</script>
