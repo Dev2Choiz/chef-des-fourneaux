@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+/*angular.module('chefdesfourneaux.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, UserService) {
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -23,7 +23,19 @@ angular.module('starter.controllers', [])
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
+    var user= UserService.authentification($scope.inputMail, $scope.inputPassword );
+    console.log(user);
+    
+    if(user.response===false){
+      LocalStorageService.remove("user");
+      //LocalStorageService.remove("user");
+      $scope.message=user.apiErrorMessage;
+
+    }else{
+      LocalStorageService.save({'user': user.response });
+      $scope.message="";
+      $location.path("/recetteAll");
+    }
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
@@ -46,3 +58,4 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
+*/

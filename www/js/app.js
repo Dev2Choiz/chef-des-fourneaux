@@ -4,7 +4,13 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+// 
+// , 'chefdesfourneaux.controllers'
+
+urlWebService="http://localhost/webservice/public/index.php";
+urlImg="../../../../img/";
+
+var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,21 +28,23 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-  .state('tabs', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
-    })
-    .state('tabs.home', {
-      url: "/home",
-      views: {
-        'home-tab': {
-          templateUrl: "templates/home.html",
-          controller: 'HomeTabCtrl'
-        }
+
+  .state('app', {
+    url: "/app",
+    abstract: true,
+    templateUrl: "templates/tabs.html",
+    controller: 'AppCtrl'
+  })
+
+  .state('app.search', {
+    url: "/search",
+    views: {
+      'home-tab': {
+        templateUrl: "templates/search.html"
       }
-    })
-    .state('tabs.facts', {
+    }
+  })
+  .state('app.facts', {
       url: "/facts",
       views: {
         'home-tab': {
@@ -44,7 +52,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('tabs.facts2', {
+    .state('app.facts2', {
       url: "/facts2",
       views: {
         'home-tab': {
@@ -52,80 +60,67 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-    .state('tabs.about', {
-      url: "/about",
-      views: {
-        'about-tab': {
-          templateUrl: "templates/about.html"
-        }
-      }
-    })
-    .state('tabs.navstack', {
-      url: "/navstack",
-      views: {
-        'about-tab': {
-          templateUrl: "templates/nav-stack.html"
-        }
-      }
-    })
-    .state('tabs.contact', {
-      url: "/contact",
-      views: {
-        'contact-tab': {
-          templateUrl: "templates/contact.html"
-        }
-      }
-    });
-    /*.state('app', {
-      url: "/app",
-      abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
-    })
 
-    .state('app.search', {
-      url: "/search",
+  .state('app.browse', {
+    url: "/browse",
+    views: {
+      'about-tab': {
+        templateUrl: "templates/browse.html"
+      }
+    }
+  })
+  .state('app.user', {
+    url: "/user",
+    views: {
+      'user-tab': {
+        templateUrl: "templates/user.html",
+        controller: "UserController"
+      }
+    }
+  })
+  /*.state('app.login', {
+      url: "/login",
       views: {
-        'menuContent': {
-          templateUrl: "templates/search.html"
+        'user-tab': {
+          templateUrl: "templates/User/login.html",
+        }
+      }
+    })*/
+  .state('app.signin', {
+      url: "/signin",
+      views: {
+        'user-tab': {
+          templateUrl: "templates/User/signin.html",
         }
       }
     })
-
-    .state('app.browse', {
-      url: "/browse",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/browse.html"
-        }
-      }
-    })
-      .state('app.playlists', {
-        url: "/playlists",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/playlists.html",
-            controller: 'PlaylistsCtrl'
-          }
-        }
+    .state('app.playlists', {
+      url: "/playlists",
+          templateUrl: "templates/playlists.html",
+          controller: 'PlaylistsCtrl'
       })
 
-    .state('app.single', {
-      url: "/playlists/:playlistId",
+  .state('app.single', {
+    url: "/playlists/:playlistId",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/playlist.html",
+        controller: 'PlaylistCtrl'
+      }
+    }
+  })
+  .state('app.recetteAll', {
+    url: "/recetteAll",
       views: {
         'menuContent': {
-          templateUrl: "templates/playlist.html",
-          controller: 'PlaylistCtrl'
+      templateUrl: "templates/recetteAll.html",
+      controller: 'RecetteAllController'
         }
       }
-  });*/
+    }
+  );
   // if none of the above states are matched, use this as the fallback
-  //$urlRouterProvider.otherwise('/app/playlists');
-  $urlRouterProvider.otherwise("/tab/home");
-})
-
-.controller('HomeTabCtrl', function($scope) {
-  console.log('HomeTabCtrl');
+  $urlRouterProvider.otherwise('/app/recetteAll');
 });
 
 
