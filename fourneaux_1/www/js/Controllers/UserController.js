@@ -12,13 +12,13 @@ application.controller('UserController', function ($scope, $sce, UserService,  $
 		}else{
 			LocalStorageService.save({'user': user.response });
 			$scope.message="";
-			$location.path("/recettes");
+			$location.path("/recetteAll");
 		}
 		
 
 
 
-		console.log('apres :', user);
+		//console.log('apres :', user);
 	}
 
 

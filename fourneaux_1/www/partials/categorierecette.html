@@ -13,7 +13,7 @@
             <div ng-bind-html="showHtml(recette.value)">
             </div>
             <p>{{recette.titre}}<p>
-            <p><img src="{{urlImg}}{{recette.img}}" style="height:140px; width:140px;"><p>
+            <p><img src="../../../../img/{{recette.img}}" style="height:140px; width:140px;"><p>
             <p>{{recette.categorie}}<p>
 
             <div ng-repeat="ingredient in recette.ingredients">
@@ -22,7 +22,7 @@
             
             <div ng-repeat="produit in recette.produits">
               <p>{{produit.value_produit}}<br/>
-               <img src="..{{produit.img}}" style="height:140px; width:140px;">
+               <img src="../../../../img/{{produit.img}}" style="height:140px; width:140px;">
                {{produit.img}}
                <p>
             </div>
