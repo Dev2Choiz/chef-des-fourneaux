@@ -10,6 +10,7 @@ chefdesfourneaux.controller('RecetteAllController', function ($scope, $sce, Rece
 				$scope.recettes = data['response'];
 				//return data['response'];
 				console.log("controlleur valeur recu",data);
+				console.log("recettes : "+$scope.recettes);
 			}
 	);	
 	

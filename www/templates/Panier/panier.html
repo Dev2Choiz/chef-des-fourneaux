@@ -1,0 +1,26 @@
+<ion-view view-title="Panier">
+  <ion-content>
+
+	<h1>Panier</h1> 
+
+	<div ng-repeat="panier in paniers">
+	  <a href="" ng-click="montrerRe7 = !montrerRe7">{{panier.value_produit}}</a>
+	  <div ng-show="montrerRe7">
+	    <div ng-bind-html="showHtml(panier.value)">
+	    </div>
+	    <p>{{panier.prix_produit}}<p>
+	    <p><img src="{{urlImg}}{{panier.img}}" style="height:140px; width:140px;"><p>
+	    <p>{{panier.ref_produit}}<p>
+
+
+
+	  </div>
+
+	</div>
+
+
+
+  </ion-content>
+</ion-view>
+
+

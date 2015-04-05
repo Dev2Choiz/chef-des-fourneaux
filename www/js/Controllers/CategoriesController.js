@@ -1,6 +1,8 @@
-application.controller('CategorieRecetteController', function ($scope, $sce, RecettesService, LocalStorageService ){
+chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService ){
 
-	$scope.user=LocalStorageService.get('user')[0];
+
+	console.log('catCtrl');
+
 
 	
 	RecettesService.getCategories().success(
