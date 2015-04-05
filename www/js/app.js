@@ -61,11 +61,39 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
       }
     })
 
-  .state('app.browse', {
-    url: "/browse",
+  .state('app.recetteAll', {
+    url: "/recetteAll",
     views: {
-      'about-tab': {
-        templateUrl: "templates/browse.html"
+      'recette-tab': {
+        templateUrl: "templates/recetteAll.html",
+        controller: 'RecetteAllController'
+      }
+    }
+  })
+  .state('app.categories', {
+    url: "/categories",
+    views: {
+      'cat-tab': {
+        templateUrl: "templates/Categories/categories.html",
+        controller: 'CategoriesController'
+      }
+    }
+  })
+  .state('app.produits', {
+    url: "/produits",
+    views: {
+      'produits-tab': {
+        templateUrl: "templates/Produits/produitAll.html",
+        controller: 'ProduitsController'
+      }
+    }
+  })
+  .state('app.panier', {
+    url: "/panier",
+    views: {
+      'panier-tab': {
+        templateUrl: "templates/Panier/panier.html",
+        controller: 'PanierController'
       }
     }
   })
@@ -78,22 +106,6 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
       }
     }
   })
-  /*.state('app.login', {
-      url: "/login",
-      views: {
-        'user-tab': {
-          templateUrl: "templates/User/login.html",
-        }
-      }
-    })*/
-  .state('app.signin', {
-      url: "/signin",
-      views: {
-        'user-tab': {
-          templateUrl: "templates/User/signin.html",
-        }
-      }
-    })
     .state('app.playlists', {
       url: "/playlists",
           templateUrl: "templates/playlists.html",
@@ -108,19 +120,9 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
         controller: 'PlaylistCtrl'
       }
     }
-  })
-  .state('app.recetteAll', {
-    url: "/recetteAll",
-      views: {
-        'menuContent': {
-      templateUrl: "templates/recetteAll.html",
-      controller: 'RecetteAllController'
-        }
-      }
-    }
-  );
+  });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/recetteAll');
+  $urlRouterProvider.otherwise('/app/search');
 });
 
 

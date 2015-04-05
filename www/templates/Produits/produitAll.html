@@ -1,0 +1,33 @@
+<ion-view view-title="Produits">
+  <ion-content>
+
+	<h1>Produits</h1> 
+
+	<div ng-repeat="produit in produits">
+	  <a href="" ng-click="montrerRe7 = !montrerRe7">{{produit.value}}</a>
+	  <div ng-show="montrerRe7">
+	    <div ng-bind-html="showHtml(produit.value)">
+	    </div>
+	    <p>{{produit.prix}}</p>
+	    <p><img src="{{urlImg}}{{produit.img}}" style="height:140px; width:140px;"></p>
+	    <p>{{produit.ref}}</p>
+		<p><button ng-click="buyProduit({{produit.id_produit}})">Acheter</button></p>
+
+		<div  ng-show="successState" >
+             <div ng-bind-html="showSuccess()">
+             </div>
+		</div>
+
+		<div  ng-show="errorState" >
+             <div ng-bind-html="showError()">
+             </div>
+		</div>
+
+	  </div>
+
+	</div>
+
+  </ion-content>
+</ion-view>
+
+

@@ -21,14 +21,52 @@
     <!-- your app's js -->
     <script src="js/app.js"></script>
 
-    <script src="js/controllers.js"></script>
+
   </head>
 
   <body ng-app="chefdesfourneaux">
   <ion-nav-bar class="bar-positive">
       <ion-nav-back-button>
       </ion-nav-back-button>
+
+
+ <!-- ng-bind="actualiserStatusCo()" -->
+<!-- <div> -->
+  
+    <ion-nav-buttons side="right" >
+      <div ng-controller="GlobalUserController" >
+                <div ng-show="statusCo">
+                  <a ng-bind-html="getPseudo()" ng-show="!showLogOut" ng-click="showLogOut=!showLogOut">(deconnexion)</a>
+                  <button ng-show="showLogOut" class="button" ng-click='deconnecter()' >Se deconnecter</button>
+                </div>
+                
+      <!-- </div> -->
+
+        <div ng-show="!statusCo">
+          <button     class="button" ng-click="login()" >
+                  Se Connecter
+          </button>
+        </div>
+      </div>
+    </ion-nav-buttons>
+  
+
+
+      
+
+
+<!--     <ion-nav-buttons side="center" >
+  <div ng-show="showLogOut" ng-controller="GlobalUserController">
+    <button class="button" ng-click='deconnecter()' >Se deconnecter</button>
+  </div>
+</ion-nav-buttons> -->
+  
+      
+
+
+
     </ion-nav-bar>
+
     <ion-nav-view>
         <script id="templates/tabs.html" type="text/ng-template">
           <ion-tabs class="tabs-icon-top tabs-positive">
@@ -37,23 +75,32 @@
               <ion-nav-view name="home-tab"></ion-nav-view>
             </ion-tab>
 
-            <ion-tab title="Browse" icon="ion-pizza" href="#/app/browse">
-              <ion-nav-view name="about-tab"></ion-nav-view>
+            <ion-tab title="Categories" icon="ion-grid" href="#/app/categories">
+              <ion-nav-view name="cat-tab"></ion-nav-view>
+            </ion-tab>
+
+            <ion-tab title="Recettes" icon="ion-pizza" href="#/app/recetteAll">
+              <ion-nav-view name="recette-tab"></ion-nav-view>
             </ion-tab>
 
             <ion-tab title="Profil" icon="ion-android-happy" ui-sref="app.user">
               <ion-nav-view name="user-tab"></ion-nav-view>
             </ion-tab>
 
+            <ion-tab title="Produits" icon="ion-bag" ui-sref ="app.produits" >
+              <ion-nav-view name="produits-tab"></ion-nav-view>
+            </ion-tab>
 
-            <ion-tab title="Panier" icon="ion-ios-cart-outline" ui-sref="tabs.contact" ng-show="showPanier">
-              <ion-nav-view name="recette-tab"></ion-nav-view>
+            <ion-tab title="Panier" icon="ion-android-cart" ui-sref="app.panier">
+              <ion-nav-view name="panier-tab"><span class="badge badge-assertive">0</span></ion-nav-view>
             </ion-tab>
 
           </ion-tabs>
         </script>
 
+
     </ion-nav-view>
+
 
      <!-- Controllers des pages -->
         <script type="text/javascript" src="js/Controllers/AppCtrl.js"></script>
@@ -61,7 +108,9 @@
         <script type="text/javascript" src="js/Controllers/PositionController.js"></script>
         <script type="text/javascript" src="js/Controllers/UserController.js"></script>
         <script type="text/javascript" src="js/Controllers/RecetteAllController.js"></script>
-        <script type="text/javascript" src="js/Controllers/CategorieRecetteController.js"></script>
+        <script type="text/javascript" src="js/Controllers/CategoriesController.js"></script>
+        <script type="text/javascript" src="js/Controllers/ProduitsController.js"></script>
+        <script type="text/javascript" src="js/Controllers/PanierController.js"></script>
         <script type="text/javascript" src="js/Controllers/TodoListController.js"></script>
 
 
@@ -74,6 +123,8 @@
         <script type="text/javascript" src="js/Services/UserService.js"></script>
         <script type="text/javascript" src="js/Services/GeolocationService.js"></script>
         <script type="text/javascript" src="js/Services/RecettesService.js"></script>
+        <script type="text/javascript" src="js/Services/ProduitsService.js"></script>
+        <script type="text/javascript" src="js/Services/PanierService.js"></script>
         <script type="text/javascript" src="js/Services/LocalStorageService.js"></script>
 
 
