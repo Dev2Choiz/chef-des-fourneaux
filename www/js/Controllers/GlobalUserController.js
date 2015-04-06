@@ -9,7 +9,7 @@ chefdesfourneaux.controller('GlobalUserController', function ($scope, $sce, User
 	$scope.getPseudo = function(){
 		//alert("affuser"+$scope.globalUser.pseudo+LocalStorageService.isKey('user'));
 		//return $scope.user.pseudo;
-		$scope.globalUser=(verifierConnection())?LocalStorageService.get('user')[0]:"";
+		$scope.globalUser = (verifierConnection())?LocalStorageService.get('user')[0]:"";
 
 		if(LocalStorageService.isKey('user')){
 			return $scope.showHtml("Bienvenue "+$scope.globalUser.pseudo+"<p>(Déconnexion)</p>");
@@ -46,8 +46,8 @@ function actualiserStatusCo(){
 		console.log("ici");
 		//alert('ici');
 		LocalStorageService.flush();
-		$scope.globalUser=null;
-		$scope.statusCo=verifierConnection();
+		$scope.globalUser = null;
+		$scope.statusCo = verifierConnection();
 		return true;
 	}
 
@@ -98,15 +98,15 @@ function actualiserStatusCo(){
 
 	
 
-    if(user.response===false){
+    if(user.response === false){
       LocalStorageService.remove("user");
       //LocalStorageService.remove("user");
-      $scope.message=user.apiErrorMessage;
-	  $scope.statusCo=verifierConnection();
+      $scope.message = user.apiErrorMessage;
+	  $scope.statusCo = verifierConnection();
     }else{
       LocalStorageService.save({'user': user.response });
-      $scope.message="";
-      $scope.statusCo=verifierConnection();
+      $scope.message = "";
+      $scope.statusCo = verifierConnection();
       $scope.closeLogin();
       //$state.transitionTo("app.recetteAll");
       //$location.path("app.recetteAll");
