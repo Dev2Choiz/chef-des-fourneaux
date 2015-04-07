@@ -9,7 +9,9 @@ chefdesfourneaux.controller('PanierController', function ($scope, $sce, PanierSe
 				console.log("Data : ",data);
 				
 				$scope.paniers = data['response'];
-				console.log("############################################",$scope.paniers);
+				$scope.total = 0;
+				
+
 			}
 	);	
 	

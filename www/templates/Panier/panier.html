@@ -1,26 +1,17 @@
 <ion-view view-title="Panier">
   <ion-content>
-
-	<h1>Panier</h1> 
-
-	<div ng-repeat="panier in paniers">
-	  <a href="" ng-click="montrerRe7 = !montrerRe7">{{panier.value_produit}}</a>
-	  <div ng-show="montrerRe7">
-	    <div ng-bind-html="showHtml(panier.value)">
-	    </div>
-	    <p>{{panier.prix_produit}}<p>
-	    <p><img src="{{urlImg}}{{panier.img}}" style="height:140px; width:140px;"><p>
-	    <p>{{panier.ref_produit}}<p>
-
-
-
-	  </div>
-
+	<h1>Votre Panier</h1> 
+	<div  class="list" ng-repeat="panier in paniers" ng-click="showImgProduit = !showImgProduit">
+		<a class="item item-thumbnail-left" href="#">
+			<img src="../../../../img/{{panier.img_produit}}">
+	  		<h2>{{panier.value_produit}}</h2>
+	  		<p>Prix : {{panier.prix_produit}} €</p>
+	  		<p>Ref : {{panier.ref_produit}}</p>	
+		</a>
+		<div class="item item-image" ng-show="showImgProduit"><img src="../../../../img/{{panier.img_produit}}"></div>
 	</div>
 
-
-
+	<p>Total = </p>
   </ion-content>
 </ion-view>
-
 

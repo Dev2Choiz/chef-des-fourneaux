@@ -1,33 +1,24 @@
 <ion-view view-title="Produits">
-  <ion-content>
+	<ion-content>
+		<h1>Ustensiles de cuisine et électroménager</h1> 
+		<div class="list" ng-repeat="produit in produits">
+			<button class="button button-small button-balanced" ng-click="buyProduit({{produit.id_produit}})">Ajouter au panier</button>
+			<a class="item item-thumbnail-left" href="#" ng-click ="showImgProduit = !showImgProduit">
 
-	<h1>Produits</h1> 
-
-	<div ng-repeat="produit in produits">
-	  <a href="" ng-click="montrerRe7 = !montrerRe7">{{produit.value}}</a>
-	  <div ng-show="montrerRe7">
-	    <div ng-bind-html="showHtml(produit.value)">
-	    </div>
-	    <p>{{produit.prix}}</p>
-	    <p><img src="{{urlImg}}{{produit.img}}" style="height:140px; width:140px;"></p>
-	    <p>{{produit.ref}}</p>
-		<p><button ng-click="buyProduit({{produit.id_produit}})">Acheter</button></p>
-
-		<div  ng-show="successState" >
-             <div ng-bind-html="showSuccess()">
-             </div>
+				<img src="../../../../img/{{produit.img}}">
+		  		<h2>{{produit.value}}</h2>
+		  		<p>Prix : {{produit.prix}} €</p>
+		  		<p>Ref : {{produit.ref}}</p>
+		  		<div  ng-show="successState" >
+		            <div ng-bind="showSuccess()"></div>
+				</div>
+				<div  ng-show="errorState" >
+		            <div ng-bind="showError()"></div>
+				</div>
+		 	</a>
+			<div class="item item-image" ng-show="showImgProduit"><img src="../../../../img/{{produit.img}}"></div>
 		</div>
-
-		<div  ng-show="errorState" >
-             <div ng-bind-html="showError()">
-             </div>
-		</div>
-
-	  </div>
-
-	</div>
-
-  </ion-content>
+	</ion-content>
 </ion-view>
 
 
