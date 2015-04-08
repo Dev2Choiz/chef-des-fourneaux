@@ -1,7 +1,6 @@
 
 chefdesfourneaux.service('ModalService', function($http, $ionicModal ){
-//tic
-//tac
+
 
 	function setModal(template, scop, animation  ){
 		$ionicModal.fromTemplateUrl(""+template, {
