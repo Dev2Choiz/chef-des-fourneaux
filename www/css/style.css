@@ -1,1 +1,10 @@
-/* Empty. Add your own CSS if you like */
+body {
+	font-family: "Calibri Light", Helvetica, Arial, sans-serif;
+	font-size: 20px;
+}
+
+h1, h2{
+	font-family: "Origin", Helvetica, Arial, sans-serif;
+	font-size: 35px;
+	font-weight: bold;
+}

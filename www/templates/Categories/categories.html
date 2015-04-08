@@ -1,8 +1,12 @@
 <ion-view view-title="Categories">
     <ion-content class="padding">
         <div class="list">
-            <div class="item item-divider" ng-repeat="categorie in categories | orderBy:value">
-                <div ng-click="showRecettes= !showRecettes">{{categorie.value}}</div>
+            <div  ng-repeat="categorie in categories | orderBy:value">
+                <div class="item item-divider" ng-click="showRecettes= !showRecettes">
+                    <h2>{{categorie.value}}</h2>
+                    <img src="../../../../img/{{categorie.img}}" style="width:20%">
+                    
+                </div>
                 <div ng-repeat="recette in categorie.recettesCat"  ng-show="showRecettes">
                     <!-- <a class="item" ng-click="showRecette = !showRecette;">{{recette.titre}}</a> -->
                     <a class="item" ng-click="afficherRecette({{recette.id_recette}})">{{recette.titre}}</a>
