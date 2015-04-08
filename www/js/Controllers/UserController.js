@@ -5,8 +5,9 @@ chefdesfourneaux.controller('UserController', function ($scope, $sce, $timeout, 
   $scope.errorState    = false;
   $scope.showPanier    = false;
   // $scope.success  = false;
-
-
+  
+  //$scope.showBtnCo=(LocalStorageService.isKey('user'))?false:true;
+  //console.log("showbtn",$scope.showBtnCo);
 
   // Form data for the login modal
   $scope.loginData = {};

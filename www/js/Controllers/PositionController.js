@@ -1,4 +1,4 @@
-application.controller('PositionController', function ($scope, GeolocationService){
+chefdesfourneaux.controller('PositionController', function ($scope, GeolocationService){
 	
 	$scope.position;
 

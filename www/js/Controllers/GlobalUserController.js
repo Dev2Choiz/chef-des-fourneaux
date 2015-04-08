@@ -38,7 +38,7 @@ function actualiserStatusCo(){
 
 
 	$scope.showHtml = function(stringHtml){
-		return $sce.trustAsHtml(stringHtml);
+		return $sce.trustAsHtml(""+stringHtml);
 	}
 
 

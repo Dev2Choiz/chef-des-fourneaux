@@ -61,33 +61,35 @@ chefdesfourneaux.service('RecettesService', function($http){
 
 
 
-	function getCategories(){
 
+
+
+
+
+
+
+
+
+/*	function getCategories(){
 		var data = {
 			service 		: "categorie",
 			method		 	: "getcategories"
 		}
-
 		return $http({
 			method : 'post',
 			url : urlWebService,
 			dataType: 'json',
 			data : $.param(data),
-			async:false,
+			async:true,
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		});
 	}
-
-
-
 	function getAllRecettesByCategorie(idCat){
-
 		var data = {
 			service 		: "viewrecette",
 			method		 	: "getallviewrecettes",
 			id_cat		 	: idCat
 		}
-
 		return $http({
 			method : 'post',
 			url : urlWebService,
@@ -96,8 +98,63 @@ chefdesfourneaux.service('RecettesService', function($http){
 			async:false,
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		});
+	};*/
+
+
+
+
+	function getCategories(){		//avec jquery
+
+		var jsonData = {
+			service 		: "categorie",
+			method		 	: "getcategories"
+		}
+
+	    var retour;
+	    $.ajax({
+	        type: 'POST',
+	        data: jsonData,
+	        url: urlWebService,
+	        async : false,
+	        dataType: 'json',
+	        success: function(data) {
+	            //console.log(data);
+	            retour=data.response;
+
+	        }
+	    });
+	    // console.log(" get cattttt",retour);
+	    return retour;
+    }
+	function getAllRecettesByCategorie(idCat){		//jquery
+		var jsonData = {
+			service 		: "viewrecette",
+			method		 	: "getallviewrecettes",
+			id_cat		 	: idCat
+		}
+	    var retour;
+	    $.ajax({
+	        type: 'POST',
+	        data: jsonData,
+	        url: urlWebService,
+	        dataType: 'json',
+	        async : false,
+	        success: function(data) {
+	            //console.log(data);
+	            retour=data.response;
+	        }
+	    });
+	    // console.log("retour dans get recette ", retour);
+	    return retour;
 
 	};
+
+
+
+
+
+
+
 
 
 

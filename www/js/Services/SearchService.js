@@ -1,4 +1,4 @@
-application.service('SearchService', function($http){
+chefdesfourneaux.service('SearchService', function($http){
 	function get(search){
 		var data = {
 			'v' : '1.0',

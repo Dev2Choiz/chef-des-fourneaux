@@ -1,4 +1,4 @@
-application.controller('TodoListController', ['$scope',
+chefdesfourneaux.controller('TodoListController', ['$scope',
     function ($scope) {
 
         // Pour manipuler plus simplement les todos au sein du contrôleur

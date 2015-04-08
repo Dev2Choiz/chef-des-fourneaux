@@ -1,4 +1,4 @@
-application.service('GeolocationService', function ($window, $q, $rootScope){
+chefdesfourneaux.service('GeolocationService', function ($window, $q, $rootScope){
 	
 	var geolocation = $window.navigator.geolocation;
 
