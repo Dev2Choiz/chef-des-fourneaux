@@ -1,4 +1,4 @@
-chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService ){
+chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService, ModalService ){
 
 
 	console.log('catCtrl');
@@ -21,6 +21,16 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 	$scope.fonc=function (){
 		alert("Samyn");
 	}
+
+
+	$scope.afficherRecette=function (idRecette){
+		alert("afficher recette");
+		ModalService.setModal("recetteSingle.html", $scope, 'slide-in-up');
+
+	}
+
+
+
 
 
 
