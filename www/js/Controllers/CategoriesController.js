@@ -30,7 +30,7 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 	}
 
 
-
+	//$state.transitionTo("app.recetteAll");
 
 
 

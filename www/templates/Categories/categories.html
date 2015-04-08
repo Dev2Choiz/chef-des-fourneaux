@@ -9,7 +9,7 @@
                 </div>
                 <div ng-repeat="recette in categorie.recettesCat"  ng-show="showRecettes">
                     <!-- <a class="item" ng-click="showRecette = !showRecette;">{{recette.titre}}</a> -->
-                    <a class="item" ng-click="afficherRecette({{recette.id_recette}})">{{recette.titre}}</a>
+                    <a class="item" ng-click="afficherRecette({{recette.id_recette}})" href="#/app/recetteSingle/:{{recette.id_recette}}">{{recette.titre}}</a>
                     <div ng-show="showRecette">
                         <div ng-bind-html="showHtml(recette.value)"></div>
                         <p>{{recette.titre}}</p>

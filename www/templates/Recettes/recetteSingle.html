@@ -1,0 +1,39 @@
+<ion-view view-title="Recette">
+	<ion-content>
+
+		<h1>Recette</h1> 
+
+
+			<div class="item item-avatar" ng-click="montrerRe7 = !montrerRe7">
+				<img src="../../../../img/{{recette.img}}">
+				<h2>{{recette.titre}}</h2>
+			</div>
+			<div class="item item-body" ng-show="montrerRe7">
+				<img class="full-image" src="../../../../img/{{recette.img}}">
+			    <div ng-bind-html="showHtml(recette.value)"></div>
+			    <!-- <p>{{recette.titre}}<p> -->
+			    
+			    <p>{{recette.categorie}}<p>
+
+			    <div ng-repeat="ingredient in recette.ingredients">
+			    <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}<p>
+			    </div>
+			    
+			    <div ng-repeat="produit in recette.produits">
+				    <p>{{produit.value_produit}}<br/>
+				    	<img src="../../../../img/{{produit.img}}" style="height:140px; width:140px;">
+				    </p>
+			    </div>
+
+			    <div ng-repeat="commentaire in recette.commentaires">
+			      	<p>
+				        {{commentaire.pseudo}}<br/>
+				        {{commentaire.update}}<br/>
+				        <div ng-bind-html="showHtml(commentaire.value)"></div>
+			       	</p>
+			    </div>
+		  	</div>
+	</ion-content>
+</ion-view>
+
+
