@@ -70,6 +70,15 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
                 }
             }
         })
+        .state('app.recetteSingle', {
+            url: "/recetteSingle/:idRecette",
+            views: {
+                'recette-tab': {
+                    templateUrl: "templates/Recettes/recetteSingle.html",
+                    controller: 'RecetteSingleController'
+                }
+            }
+        })
         .state('app.categories', {
             url: "/categories",
             views: {
