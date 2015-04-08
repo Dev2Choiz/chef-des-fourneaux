@@ -3,30 +3,6 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 
 	console.log('catCtrl');
 	$scope.categories=null;
-	$scope.categories=RecettesService.getCategories();
-	
-	console.log("scope categorie",$scope.categories);
-
-	for (var i = 0; i < $scope.categories.length; i++) {
-		var tmp=RecettesService.getAllRecettesByCategorie($scope.categories[i].id_cat);
-		console.log("Recette recu"+ $scope.categories[i].id_cat, tmp);
-		//alert("id:" + $scope.categories[i].id_cat);
-		/*if(typeof(tmp) != 'undefined'){
-			tmp=null;
-		}*/
-		$scope.categories[i].recettesCat=tmp;
-	}
-	console.log("scope categorie avec recette ",$scope.categories);
-	
-	$scope.fonc=function (){
-		alert("Samyn");
-	}
-
-
-
-
-/*	console.log('catCtrl');
-	$scope.categories=null;
 	RecettesService.getCategories().success(
 		function(data){
 			console.log("getcat",data.response);
@@ -34,20 +10,18 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 			 console.log("juste apresscope",$scope.categories);
 
 			for (var i = 0; i < $scope.categories.length; i++) {
-				alert("id:" + $scope.categories[i].id_cat);
-				RecettesService.getAllRecettesByCategorie($scope.categories[i].id_cat).success(
+				RecettesService.getAllRecettesByCategorie($scope.categories.id_cat).success(
 					function(data){
 						//alert("2"+i);
 						//console.log("cattttre7", data.response);
-						alert("ici"+i);
-						$scope.categories['recettes'+$scope.categories[i].id_cat]=data.response;
+						$scope.categories['recettes'+$scope.categories.id_cat]=data.response;
 					}
 				);
 				console.log("scope cat "+ i,$scope.categories);
 			}
 
 		}
-	);*/
+	);
 	
 
 
@@ -59,7 +33,7 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 	
 
 	$scope.showHtml = function(stringHtml){
-		return $sce.trustAsHtml(""+stringHtml);
+		return $sce.trustAsHtml(stringHtml);
 	}
 
 /*	$scope.recettesByCategorie = function(idCat){
