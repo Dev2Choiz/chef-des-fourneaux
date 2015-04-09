@@ -34,8 +34,8 @@ chefdesfourneaux.service('RecettesService', function($http){
 	function getRecette(id){
 
 		var data = {
-			service 		: "viewrecette",
-			method		 	: "getviewrecette",
+			service 		: "ViewRecette",
+			method		 	: "getViewRecette",
 			id_recette		: id
 
 		}
@@ -49,13 +49,8 @@ chefdesfourneaux.service('RecettesService', function($http){
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		}).success(function(data) {
 			 console.log("valeur dans le success :",data);
-			 return "valeur qui vient du succes";
-
-
 		}).error(function(data, status, headers, config) {
 		    console.log("error",data);
-		    //false;
-		    return "valeur qui vient du error";
 		});
 	}
 
