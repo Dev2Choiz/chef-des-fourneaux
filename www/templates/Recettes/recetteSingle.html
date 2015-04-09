@@ -33,15 +33,16 @@
 		    </div>
 		    <input type="button" value="Ajouter un commentaire" ng-click="showEditeurCommentaire=true">
 			<div ng-show="showEditeurCommentaire">
-				<textarea ng-model="textCommentaire"></textarea>
-				<select ng-model="note">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
+				<textarea ng-model="comData.textCommentaire"  cols="60" rows="3"></textarea>
+				
+				<select ng-model="comData.note">
+					<option  value="1">1</option>
+					<option  value="2">2</option>
+					<option  value="3">3</option>
+					<option  value="4">4</option>
+					<option  value="5">5</option>
 				</select>
-				<input type="button" ng-click="addCommentaire()"   value="Ajouter un commentaire">
+				<input type="button" ng-click="addCommentaire()"   value="Envoyer">
 			</div>
 
 	  	</div>

@@ -10,10 +10,7 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 	for (var i = 0; i < $scope.categories.length; i++) {
 		var tmp=RecettesService.getAllRecettesByCategorie($scope.categories[i].id_cat);
 		console.log("Recette recu"+ $scope.categories[i].id_cat, tmp);
-		//alert("id:" + $scope.categories[i].id_cat);
-		/*if(typeof(tmp) != 'undefined'){
-			tmp=null;
-		}*/
+
 		$scope.categories[i].recettesCat=tmp;
 	}
 	console.log("scope categorie avec recette ",$scope.categories);
@@ -24,8 +21,8 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 
 
 	$scope.afficherRecette=function (idRecette){
-		alert("afficher recette");
-		ModalService.setModal("recetteSingle.html", $scope, 'slide-in-up');
+
+		//ModalService.setModal("recetteSingle.html", $scope, 'slide-in-up');
 
 	}
 
