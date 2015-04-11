@@ -2,13 +2,14 @@
 chefdesfourneaux.service('ModalService', function($http, $ionicModal ){
 
 
-	function setModal(template, scop, animation  ){
-		$ionicModal.fromTemplateUrl(""+template, {
+	function getModal(template, idModal, scop, animation  ){
+		return $ionicModal.fromTemplateUrl(""+template, {
+			id:idModal,
+			/*controller: ctrl,*/
 		    scope: scop,
 		    animation: animation		//'slide-in-up'
-		}).then(function(modal) {
-		    $scope.modal = modal;
 		});
+
 	};
 
 
@@ -19,7 +20,7 @@ chefdesfourneaux.service('ModalService', function($http, $ionicModal ){
 
 
 	return ({
-		setModal 					: setModal
+		getModal 					: getModal
 
 	});
 

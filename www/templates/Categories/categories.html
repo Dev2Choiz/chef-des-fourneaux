@@ -9,35 +9,8 @@
                 </div>
                 <div ng-repeat="recette in categorie.recettesCat"  ng-show="showRecettes">
                     <!-- <a class="item" ng-click="showRecette = !showRecette;">{{recette.titre}}</a>  -->
-                    <a class="item"  ng-click="afficherRecette({{recette.id_recette}})" href="#/app/recetteSingle/{{recette.id_recette}}">{{recette.titre}}</a>
-                    <div ng-show="showRecette">    <!--  ng-click="afficherRecette({{recette.id_recette}})"  -->
-                        <div ng-bind-html="showHtml(recette.value)"></div>
-                        <p>{{recette.titre}}</p>
-                        <p><img src="../../../../img/{{recette.img}}" style="height:140px; width:140px;"></p>
-                        <p>{{recette.categorie}}</p>
-
-                        <div ng-repeat="ingredient in recette.ingredients">
-                            <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}</p>
-                        </div>
-
-                        <div ng-repeat="produit in recette.produits">
-                            <p>{{produit.value_produit}}
-                                <br/>
-                                <img src="../../../../img/{{produit.img}}" style="height:140px; width:140px;">
-                                {{produit.img}}
-                            </p>
-                        </div>
-
-                        <div ng-repeat="commentaire in recette.commentaires">
-                            <p>
-                                {{commentaire.pseudo}}
-                                <br/>
-                                {{commentaire.update}}
-                                <br/>
-                                <div ng-bind-html="showHtml(commentaire.value)"></div>
-                            </p>
-                        </div>
-                    </div>
+                    <a class="item"  href="#/app/recetteSingle/{{recette.id_recette}}" >{{recette.titre}}</a>
+                    
                 </div>
             </div>   
         </div>

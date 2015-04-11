@@ -1,4 +1,4 @@
-chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService, ModalService ){
+chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService, $ionicModal, ModalService ){
 
 
 	console.log('catCtrl');
@@ -21,9 +21,23 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 
 
 	$scope.afficherRecette=function (idRecette){
+		//console.log($scope);
 
-		//ModalService.setModal("recetteSingle.html", $scope, 'slide-in-up');
+		RecettesService.getRecette(idRecette).success(
+			function(data){
+				console.log("recette",data.response);
+				$scope.recette=data.response;
+			}
+		);
 
+		mod=ModalService.getModal("templates/Recettes/recetteSingleModal.html", 1, $scope, 'slide-in-up');
+		mod.then(function(modal) {
+		    $scope.modal1= modal;
+		    $scope.modal1.show();
+		    console.log("mod",mod);
+		})
+
+		
 	}
 
 

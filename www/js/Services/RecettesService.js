@@ -148,8 +148,58 @@ chefdesfourneaux.service('RecettesService', function($http){
 
 
 
+	function getNoteUser(idUser, idRecette){		//avec jquery
+
+		var jsonData = {
+			service 		: "Note",
+			method		 	: "getNote",
+			id_recette		: idRecette,
+			id_user			: idUser
+
+		}
+
+	    var retour;
+	    $.ajax({
+	        type: 'POST',
+	        data: jsonData,
+	        url: urlWebService,
+	        async : false,
+	        dataType: 'json',
+	        success: function(data) {
+				console.log("succes note",data);
+	            retour=data.response;
+
+	        }
+	    });
+	     console.log(" get note",retour);
+	    return retour;
+    }
 
 
+	function updateNote(idUser, idRecette, note){		//avec jquery
+
+		var jsonData = {
+			service 		: "Note",
+			method		 	: "updateNote",
+			id_recette		: idRecette,
+			id_user			: idUser,
+			value 			: note
+
+		}
+
+	    var retour;
+	    $.ajax({
+	        type: 'POST',
+	        data: jsonData,
+	        url: urlWebService,
+	        async : false,
+	        dataType: 'json',
+	        success: function(data) {
+	            retour=data.response;
+	        }
+	    });
+	    return retour;
+    }
 
 
 
@@ -159,7 +209,9 @@ chefdesfourneaux.service('RecettesService', function($http){
 		getAllRecettes 					: getAllRecettes,
 		getRecette 						: getRecette,
 		getCategories 					: getCategories,
-		getAllRecettesByCategorie		: getAllRecettesByCategorie
+		getAllRecettesByCategorie		: getAllRecettesByCategorie,
+		getNoteUser						: getNoteUser,
+		updateNote						: updateNote
 
 	});
 

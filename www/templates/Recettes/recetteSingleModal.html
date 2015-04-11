@@ -1,11 +1,10 @@
-<ion-view view-title="Recette">
+<ion-modal-view view-title="Recette">
+    <ion-header-bar>
+
+      <h1 class="title">{{recette.titre}}</h1>
+    </ion-header-bar>
+
 	<ion-content>
-
-		<h1>Recette</h1> 
-
-
-
-		<h2>{{recette.titre}}</h2>
 
 		<div class="item item-body">
 			<img class="full-image" src="../../../../img/{{recette.img}}">
@@ -24,21 +23,6 @@
 			    </p>
 		    </div>
 
-		    <div>
-			    <p>Note : {{recette.noteMoyenne}} / 5</p>
-		    </div>
-
-		    <div>
-				<select ng-model="comData.noteUser"  ng-change="changerNote(comData.noteUser)" >
-					<option  value="1">1</option>
-					<option  value="2">2</option>
-					<option  value="3">3</option>
-					<option  value="4">4</option>
-					<option  value="5">5</option>
-				</select>
-		    </div>
-
-
 		    <div ng-repeat="commentaire in recette.commentaires">
 		      	<p>
 			        {{commentaire.pseudo}}<br/>
@@ -50,11 +34,18 @@
 			<div ng-show="showEditeurCommentaire">
 				<textarea ng-model="comData.textCommentaire"  cols="60" rows="3"></textarea>
 				
+				<select ng-model="comData.note">
+					<option  value="1">1</option>
+					<option  value="2">2</option>
+					<option  value="3">3</option>
+					<option  value="4">4</option>
+					<option  value="5">5</option>
+				</select>
 				<input type="button" ng-click="addCommentaire()"   value="Envoyer">
 			</div>
 
 	  	</div>
 	</ion-content>
-</ion-view>
+</ion-modal-view>
 
 
