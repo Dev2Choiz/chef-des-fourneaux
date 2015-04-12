@@ -1,4 +1,4 @@
-chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService, $ionicModal, ModalService ){
+chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, RecettesService, LocalStorageService, $ionicModal, ModalService){
 
 
 	console.log('catCtrl');
@@ -35,7 +35,10 @@ chefdesfourneaux.controller('CategoriesController', function ($scope, $sce, Rece
 		    $scope.modal1= modal;
 		    $scope.modal1.show();
 		    console.log("mod",mod);
-		})
+		});
+
+		
+
 
 		
 	}

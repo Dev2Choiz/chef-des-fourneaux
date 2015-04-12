@@ -64,7 +64,7 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
         .state('app.recetteAll', {
             url: "/recetteAll",
             views: {
-                'recette-tab': {
+                'recettes-tab': {
                     templateUrl: "templates/Recettes/recetteAll.html",
                     controller: 'RecetteAllController'
                 }
@@ -73,7 +73,7 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
         .state('app.recetteSingle', {
             url: "/recetteSingle/:idRecette",
             views: {
-                'recette-tab': {
+                'selection-tab': {
                     templateUrl: "templates/Recettes/recetteSingle.html",
                     controller: 'RecetteSingleController'
                 }
@@ -100,8 +100,8 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
         .state('app.panier', {
             url: "/panier",
             views: {
-                'panier-tab': {
-                    templateUrl: "templates/Panier/panier.html",
+                'produits-tab': {
+                    templateUrl: "templates/panier.html",
                     controller: 'PanierController'
                 }
             }

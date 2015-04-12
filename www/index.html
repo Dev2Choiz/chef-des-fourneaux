@@ -73,8 +73,12 @@
                         <ion-nav-view name="cat-tab"></ion-nav-view>
                     </ion-tab>
 
-                    <ion-tab title="Recettes" icon="ion-pizza" href="#/app/recetteAll">
-                        <ion-nav-view name="recette-tab"></ion-nav-view>
+                    <ion-tab title="Recettes" icon="ion-pizza" ui-sref="app.recetteAll">
+                        <ion-nav-view name="recettes-tab"></ion-nav-view>
+                    </ion-tab>
+
+                    <ion-tab title="Sélection" icon="ion-star" ui-sref="app.recetteSingle">
+                        <ion-nav-view name="selection-tab"></ion-nav-view>
                     </ion-tab>
 
                     <ion-tab title="Profil" icon="ion-android-happy" ui-sref="app.user">
@@ -83,10 +87,6 @@
 
                     <ion-tab title="Produits" icon="ion-bag" ui-sref ="app.produits" >
                         <ion-nav-view name="produits-tab"></ion-nav-view>
-                    </ion-tab>
-
-                    <ion-tab title="Panier" icon="ion-android-cart" ui-sref="app.panier">
-                        <ion-nav-view name="panier-tab"><span class="badge badge-assertive">0</span></ion-nav-view>
                     </ion-tab>
 
                 </ion-tabs>

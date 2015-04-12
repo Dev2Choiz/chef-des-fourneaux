@@ -1,5 +1,6 @@
 <ion-view view-title="Produits">
 	<ion-content>
+		<h1><a class="button icon-left ion-star button-energized" href="#/app/panier">Votre panier</a></h1>
 		<h1>Ustensiles de cuisine et électroménager</h1> 
 		<div class="list" ng-repeat="produit in produits">
 			<button class="button button-small button-balanced" ng-click="buyProduit({{produit.id_produit}})">Ajouter au panier</button>
@@ -21,4 +22,22 @@
 	</ion-content>
 </ion-view>
 
+<script id="templates/panier.html" type="text/ng-template">
+<ion-view view-title="Panier">
+  <ion-content>
+	<h1>Votre Panier</h1> 
+	<h2>coucocu</h2>
+	<div  class="list" ng-repeat="panier in paniers" ng-click="showImgProduit = !showImgProduit">
+		<div class="item item-thumbnail-left">
+			<img src="../../../../img/{{panier.img_produit}}">
+	  		<h2>{{panier.value_produit}}</h2>
+	  		<p>Prix : {{panier.prix_produit}} €</p>
+	  		<p>Ref : {{panier.ref_produit}}</p>	
+		</div>
+		<div class="item item-image" ng-show="showImgProduit"><img src="../../../../img/{{panier.img_produit}}"></div>
+	</div>
 
+	<p>Total = <div ng-bind-html="total"></div></p>
+  </ion-content>
+</ion-view>
+</script>

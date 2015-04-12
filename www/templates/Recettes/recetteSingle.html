@@ -1,60 +1,61 @@
-<ion-view view-title="Recette">
-	<ion-content>
-
-		<h1>Recette</h1> 
 
 
+	<ion-view view-title="Recette">
+		<ion-content>
 
-		<h2>{{recette.titre}}</h2>
-
-		<div class="item item-body">
-			<img class="full-image" src="../../../../img/{{recette.img}}">
-		    <div ng-bind-html="showHtml(recette.value)"></div>
-		    <!-- <p>{{recette.titre}}<p> -->
-		    
-		    <p>{{recette.categorie}}<p>
-
-		    <div ng-repeat="ingredient in recette.ingredients">
-		    <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}<p>
-		    </div>
-		    
-		    <div ng-repeat="produit in recette.produits">
-			    <p>{{produit.value_produit}}<br/>
-			    	<img src="../../../../img/produit/{{produit.img}}" style="height:140px; width:140px;">
-			    </p>
-		    </div>
-
-		    <div>
-			    <p>Note : {{recette.noteMoyenne}} / 5</p>
-		    </div>
-
-		    <div>
-				<select ng-model="comData.noteUser"  ng-change="changerNote(comData.noteUser)" >
-					<option  value="1">1</option>
-					<option  value="2">2</option>
-					<option  value="3">3</option>
-					<option  value="4">4</option>
-					<option  value="5">5</option>
-				</select>
-		    </div>
+			<h1>Recette</h1> 
 
 
-		    <div ng-repeat="commentaire in recette.commentaires">
-		      	<p>
-			        {{commentaire.pseudo}}<br/>
-			        {{commentaire.update}}<br/>
-			        <div ng-bind-html="showHtml(commentaire.value)"></div>
-		       	</p>
-		    </div>
-		    <input type="button" value="Ajouter un commentaire" ng-click="showEditeurCommentaire=true">
-			<div ng-show="showEditeurCommentaire">
-				<textarea ng-model="comData.textCommentaire"  cols="60" rows="3"></textarea>
-				
-				<input type="button" ng-click="addCommentaire()"   value="Envoyer">
-			</div>
 
-	  	</div>
-	</ion-content>
-</ion-view>
+			<h2>{{recette.titre}}</h2>
 
+			<div class="item item-body">
+				<img class="full-image" src="../../../../img/{{recette.img}}">
+			    <div ng-bind-html="showHtml(recette.value)"></div>
+			    <!-- <p>{{recette.titre}}<p> -->
+			    
+			    <p>{{recette.categorie}}<p>
+
+			    <div ng-repeat="ingredient in recette.ingredients">
+			    <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}<p>
+			    </div>
+			    
+			    <div ng-repeat="produit in recette.produits">
+				    <p>{{produit.value_produit}}<br/>
+				    	<img src="../../../../img/produit/{{produit.img}}" style="height:140px; width:140px;">
+				    </p>
+			    </div>
+
+			    <div>
+				    <p>Note : {{recette.noteMoyenne}} / 5</p>
+			    </div>
+
+			    <div>
+					<select ng-model="comData.noteUser"  ng-change="changerNote(comData.noteUser)" >
+						<option  value="1">1</option>
+						<option  value="2">2</option>
+						<option  value="3">3</option>
+						<option  value="4">4</option>
+						<option  value="5">5</option>
+					</select>
+			    </div>
+
+
+			    <div ng-repeat="commentaire in recette.commentaires">
+			      	<p>
+				        {{commentaire.pseudo}}<br/>
+				        {{commentaire.update}}<br/>
+				        <div ng-bind-html="showHtml(commentaire.value)"></div>
+			       	</p>
+			    </div>
+			    <input type="button" value="Ajouter un commentaire" ng-click="showEditeurCommentaire=true">
+				<div ng-show="showEditeurCommentaire">
+					<textarea ng-model="comData.textCommentaire"  cols="60" rows="3"></textarea>
+					
+					<input type="button" ng-click="addCommentaire()"   value="Envoyer">
+				</div>
+
+		  	</div>
+		</ion-content>
+	</ion-view>
 

@@ -15,7 +15,7 @@ chefdesfourneaux.service('ModalService', function($http, $ionicModal,$q ){
 
 
 	function msgBox(msg, title, scop  ){
-		var deferred = $q.defer();
+		//var deferred = $q.defer();		//pt-etre une promesse?
 		scop.dataModal=[];
 		scop.dataModal.titleModal=title;
 		scop.dataModal.bodyModal=msg;

@@ -5,7 +5,7 @@ chefdesfourneaux.controller('RecetteSingleController', function ($scope, $sce, R
 	$scope.comData.textCommentaire="";
 	$scope.comData.noteUser=1;
 
-	ModalService.msgBox("debutt","Titre/!\\", $scope);
+	ModalService.msgBox("debutt","Titre", $scope);
 
 	RecettesService.getRecette($stateParams.idRecette).success(
 
@@ -79,7 +79,7 @@ chefdesfourneaux.controller('RecetteSingleController', function ($scope, $sce, R
 			//$scope.recette.noteMoyenne=note;	//RecettesService.getNoteMoyenne(user.id_user, $stateParams.idRecette);
 
 			console.log("udpdat", res);
-			ModalService.msgBox("fait","/!\\", $scope);
+			//ModalService.msgBox("fait","/!\\", $scope);
 		}else{
 			//alert("vous devez etre connecté pour lacher un com");
 			ModalService.msgBox("vous devez etre connecté pour lacher un com","/!\\", $scope);

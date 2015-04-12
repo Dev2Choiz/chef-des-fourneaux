@@ -1,5 +1,6 @@
 chefdesfourneaux.controller('UserController', function ($scope, $sce, $timeout, $state, UserService, LocalStorageService, $ionicModal ){
 
+  console.log("state",$state);
   var errorMessage    = "";
   //errorMessage    = "";
   $scope.errorState    = false;
@@ -47,7 +48,9 @@ chefdesfourneaux.controller('UserController', function ($scope, $sce, $timeout, 
     }else{
       LocalStorageService.save({'user': user.response });
       $scope.message="";
-      $state.transitionTo("app.recetteAll");
+      $scope.closeLogin();
+      // $state.transitionTo("app.recetteAll");
+      $state.go("app.recetteAll");
       //$location.path("app.recetteAll");
     }
 
