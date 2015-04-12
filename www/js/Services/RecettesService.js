@@ -176,6 +176,34 @@ chefdesfourneaux.service('RecettesService', function($http){
     }
 
 
+	function getNoteMoyenne( idRecette){		//avec jquery
+
+		var jsonData = {
+			service 		: "Note",
+			method		 	: "getMoyenneNote",
+			id_recette		: idRecette
+
+		}
+
+	    var retour;
+	    $.ajax({
+	        type: 'POST',
+	        data: jsonData,
+	        url: urlWebService,
+	        async : false,
+	        dataType: 'json',
+	        success: function(data) {
+				console.log("succes note",data);
+	            retour=data.response;
+
+	        }
+	    });
+	     console.log(" get noteMoyenne",retour);
+	    return retour;
+    }
+
+
+
 	function updateNote(idUser, idRecette, note){		//avec jquery
 
 		var jsonData = {
@@ -211,6 +239,7 @@ chefdesfourneaux.service('RecettesService', function($http){
 		getCategories 					: getCategories,
 		getAllRecettesByCategorie		: getAllRecettesByCategorie,
 		getNoteUser						: getNoteUser,
+		getNoteMoyenne					: getNoteMoyenne,
 		updateNote						: updateNote
 
 	});

@@ -1,0 +1,48 @@
+<ion-modal-view view-title="Boite de dialogue">
+    <ion-header-bar>
+
+      <h1 class="title">{{dataModal.titleModal}}</h1>
+    </ion-header-bar>
+
+  <ion-content>
+
+    <div class="item item-body">
+        
+        <p>{{dataModal.bodyModal}}<p>
+
+      
+      <div>        
+        <input type="button" ng-click="fermerMsgbox()"   value="ok">
+      </div>
+
+      
+    </div>
+  </ion-content>
+</ion-modal-view>
+
+
+
+
+<!-- <ion-modal-view view-title="Recette">
+    <ion-header-bar>
+
+      <h1 class="title">{{dataModal.titre}}</h1>
+    </ion-header-bar>
+
+  <ion-content>
+
+    <div class="item item-body">
+        
+        <p>{{dataModal.body}}<p>
+
+      
+      <div>        
+        <input type="button" ng-click="addCommentaire()"   value="ok">
+      </div>
+
+      </div>
+  </ion-content>
+</ion-modal-view>
+
+
+ -->

@@ -1,0 +1,63 @@
+<!-- Signin page -->
+<ion-modal-view view-title="S'inscrire">
+    <ion-header-bar>
+        <h1 class="title">Inscription</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeSignin()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <form ng-submit="doSignin()">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Prenom</span>
+                    <input type="text" ng-model="signinData.inputPrenom">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Nom</span>
+                    <input type="text" ng-model="signinData.inputNom">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Pseudo</span>
+                    <input type="text" ng-model="signinData.inputPseudo">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Date de naissance</span>
+                    <input type="date" ng-model="signinData.inputDateNaissance">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Mail</span>
+                    <input type="mail" ng-model="signinData.inputMail">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="signinData.inputPassword">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Confirmation Password</span>
+                    <input type="password" ng-model="signinData.inputConfPassword">
+                </label>
+
+                <label class="item item-input" ng-show="errorState">
+                    <div ng-bind-html="showError()"></div>
+                </label>
+                <!-- <label class="item item-input" ng-show="success">
+                 <div ng-bind-html="showSuccess()">
+                 </div>
+
+                 </label> -->
+
+
+                <label class="item">
+                    <button class="button button-block button-positive" type="submit">Inscription</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>
