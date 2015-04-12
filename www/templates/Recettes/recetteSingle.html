@@ -1,7 +1,11 @@
 <ion-view view-title="Recette">
 	<ion-content>
-		<h1>{{recette.categorie}}</h1> 
-		<h2>Recette : {{recette.titre}}</h2>
+
+		<h1>Recette</h1> 
+
+
+
+		<h2>{{recette.titre}}</h2>
 
 		<div class="item item-body">
 			<img class="full-image" src="../../../../img/{{recette.img}}">
@@ -42,11 +46,11 @@
 			        <div ng-bind-html="showHtml(commentaire.value)"></div>
 		       	</p>
 		    </div>
-		    <input type="button" value="Ajouter un commentaire" ng-click="showEditeurCommentaire = true">
+		    <input type="button" value="Ajouter un commentaire" ng-click="showEditeurCommentaire=true">
 			<div ng-show="showEditeurCommentaire">
 				<textarea ng-model="comData.textCommentaire"  cols="60" rows="3"></textarea>
 				
-				<input type="button" ng-click="addCommentaire()"   value="Commenter cette recette">
+				<input type="button" ng-click="addCommentaire()"   value="Envoyer">
 			</div>
 
 	  	</div>

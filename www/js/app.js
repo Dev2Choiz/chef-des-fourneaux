@@ -7,13 +7,8 @@
 // 
 // , 'chefdesfourneaux.controllers'
 
-
-/* Tavail en local*/
 urlWebService="http://localhost/webservice/public/index.php";
-
-/* Travail en ligne */
-//urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.php";
-//urlImg="http://chefdesfourneaux-api.16mb.com/img/";
+urlImg="../../../../img/";
 
 var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
 

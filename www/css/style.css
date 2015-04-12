@@ -3,8 +3,8 @@ body {
 	font-size: 20px;
 }
 
-h1{
+h1, h2{
 	font-family: "Origin", Helvetica, Arial, sans-serif;
-	font-size: 30px;
+	font-size: 35px;
 	font-weight: bold;
 }

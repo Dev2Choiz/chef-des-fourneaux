@@ -5,8 +5,8 @@ chefdesfourneaux.service('RecettesService', function($http){
 	function getAllRecettes(){
 
 		var data = {
-			service 		: "ViewRecette",
-			method		 	: "getAllViewRecettes"
+			service 		: "viewrecette",
+			method		 	: "getallviewrecettes"
 		}
 
 		return $http({
@@ -101,8 +101,8 @@ chefdesfourneaux.service('RecettesService', function($http){
 	function getCategories(){		//avec jquery
 
 		var jsonData = {
-			service 		: "Categorie",
-			method		 	: "getCategories"
+			service 		: "categorie",
+			method		 	: "getcategories"
 		}
 
 	    var retour;
@@ -123,8 +123,8 @@ chefdesfourneaux.service('RecettesService', function($http){
     }
 	function getAllRecettesByCategorie(idCat){		//jquery
 		var jsonData = {
-			service 		: "Viewrecette",
-			method		 	: "getAllViewRecettes",
+			service 		: "viewrecette",
+			method		 	: "getallviewrecettes",
 			id_cat		 	: idCat
 		}
 	    var retour;
