@@ -114,7 +114,7 @@ chefdesfourneaux.service('RecettesService', function($http){
 	        dataType: 'json',
 	        success: function(data) {
 	            //console.log(data);
-	            retour=data.response;
+	            retour = data.response;
 
 	        }
 	    });
@@ -149,6 +149,29 @@ chefdesfourneaux.service('RecettesService', function($http){
 			service 		: "ViewRecette",
 			method		 	: "getAllViewRecettes",
 			top		 		: 1
+		}
+	    var retour;
+	    $.ajax({
+	        type: 'POST',
+	        data: jsonData,
+	        url: urlWebService,
+	        dataType: 'json',
+	        async : false,
+	        success: function(data) {
+	            //console.log(data);
+	            retour=data.response;
+	        }
+	    });
+	    // console.log("retour dans get recette ", retour);
+	    return retour;
+
+	};
+
+	function getAllRecettesByType(type){		//jquery
+		var jsonData = {
+			service 		: "ViewRecette",
+			method		 	: "getAllViewRecettes",
+			type		 	: type
 		}
 	    var retour;
 	    $.ajax({
@@ -246,7 +269,7 @@ chefdesfourneaux.service('RecettesService', function($http){
 	        async : false,
 	        dataType: 'json',
 	        success: function(data) {
-	            retour=data.response;
+	            retour = data.response;
 	        }
 	    });
 	    return retour;
@@ -262,6 +285,7 @@ chefdesfourneaux.service('RecettesService', function($http){
 		getTopRecettes					: getTopRecettes,
 		getCategories 					: getCategories,
 		getAllRecettesByCategorie		: getAllRecettesByCategorie,
+		getAllRecettesByType			: getAllRecettesByType,
 		getNoteUser						: getNoteUser,
 		getNoteMoyenne					: getNoteMoyenne,
 		updateNote						: updateNote

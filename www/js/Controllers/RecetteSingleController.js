@@ -5,8 +5,6 @@ chefdesfourneaux.controller('RecetteSingleController', function ($scope, $sce, R
 	$scope.comData.textCommentaire="";
 	$scope.comData.noteUser=1;
 
-	ModalService.msgBox("debutt","Titre", $scope);
-
 	RecettesService.getRecette($stateParams.idRecette).success(
 
 		function(data){
@@ -26,6 +24,8 @@ chefdesfourneaux.controller('RecetteSingleController', function ($scope, $sce, R
 				$scope.comData.noteUser=1;
 			};
 			console.log("scope recette",$scope.recette, "note", $scope.comData.noteUser);
+
+			console.log("Commentair", $scope.recette.commentaires);
 			
 		}
 	);

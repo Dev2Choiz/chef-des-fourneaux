@@ -7,12 +7,16 @@
 // 
 // , 'chefdesfourneaux.controllers'
 
-urlWebService="http://localhost/webservice/public/index.php";
-urlImg="../../../../img/";
+//urlWebService="http://localhost/webservice/public/index.php";
+urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.php";
+//urlImg = "../../../../img/";
+
 
 var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
 
-.run(function($ionicPlatform) {
+.constant('urlImg', 'http://chefdesfourneaux-api.16mb.com/img/')
+
+.run(function($ionicPlatform, $rootScope, urlImg) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -24,6 +28,8 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
             StatusBar.styleDefault();
         }
     });
+    $rootScope.urlImg = urlImg;
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -95,6 +101,15 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
                 'produits-tab': {
                     templateUrl: "templates/Produits/produitAll.html",
                     controller: 'ProduitsController'
+                }
+            }
+        })
+        .state('app.produitSingle', {
+            url: "/produitSingle/:idProduit",
+            views: {
+                'produits-tab': {
+                    templateUrl: "templates/produitSingle.html",
+                    controller: 'ProduitSingleController'
                 }
             }
         })

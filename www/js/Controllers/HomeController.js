@@ -1,11 +1,10 @@
-chefdesfourneaux.controller('HomeController', function ($scope, $sce, RecettesService){
+chefdesfourneaux.controller('HomeController', function ($scope, $sce, RecettesService, ProduitsService){
 
-	$scope.submit = function(){
-		console.log('HomeController');
-	} 
+
 	//$scope.user=(LocalStorageService.isKey('user'))?LocalStorageService.get('user')[0]:"";
 
 	console.log('HomeController');
+	//	console.log(urlImg);
 		
 	$scope.recettes = RecettesService.getAllRecettes().success(
 			function(data){
@@ -19,9 +18,15 @@ chefdesfourneaux.controller('HomeController', function ($scope, $sce, RecettesSe
 	);	
 
 	$scope.recettesTop = RecettesService.getTopRecettes();
-	console.log("################################################RecettesTop",$scope.recettesTop);
+	//console.log("################################################RecettesTop",$scope.recettesTop);
+
+	$scope.recettesEntree = RecettesService.getAllRecettesByType('entree');
+	$scope.recettesPlat = RecettesService.getAllRecettesByType('plat');
+	$scope.recettesDessert = RecettesService.getAllRecettesByType('dessert');
 	
-	
+	$scope.categories = RecettesService.getCategories();
+
+	$scope.produitsTop = ProduitsService.getTopProduits();	
 
 	$scope.showHtml = function(stringHtml){
 		return $sce.trustAsHtml(""+stringHtml);

@@ -4,11 +4,11 @@
 		<h1>Recettes</h1> 
 		<div class="list card" ng-repeat="recette in recettes | orderBy:id_recette">
 			<div class="item item-avatar" ng-click="montrerRe7 = !montrerRe7">
-				<img src="../../../../img/{{recette.img}}">
+				<img src="{{urlImg + recette.img}}">
 				<h2>{{recette.titre}}</h2>
 			</div>
 			<div class="item item-body" ng-show="montrerRe7">
-				<img class="full-image" src="../../../../img/{{recette.img}}">
+				<img class="full-image" src="{{urlImg + recette.img}}">
 			    <div ng-bind-html="showHtml(recette.value)"></div>
 			    <!-- <p>{{recette.titre}}<p> -->
 			    
@@ -20,7 +20,7 @@
 			    
 			    <div ng-repeat="produit in recette.produits">
 				    <p>{{produit.value_produit}}<br/>
-				    	<img src="../../../../img/{{produit.img}}" style="height:140px; width:140px;">
+				    	<img src="{{urlImg + produit.img}}" style="height:140px; width:140px;">
 				    </p>
 			    </div>
 
