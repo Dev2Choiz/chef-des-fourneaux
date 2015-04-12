@@ -10,7 +10,7 @@
 			<h2>{{recette.titre}}</h2>
 
 			<div class="item item-body">
-				<img class="full-image" src="../../../../img/{{recette.img}}">
+				<img class="full-image" src="{{urlImg + recette.img}}">
 			    <div ng-bind-html="showHtml(recette.value)"></div>
 			    <!-- <p>{{recette.titre}}<p> -->
 			    
@@ -22,15 +22,16 @@
 			    
 			    <div ng-repeat="produit in recette.produits">
 				    <p>{{produit.value_produit}}<br/>
-				    	<img src="../../../../img/produit/{{produit.img}}" style="height:140px; width:140px;">
+				    	<img src="{{urlImg + produit.img}}" style="height:140px; width:140px;">
 				    </p>
 			    </div>
 
-			    <div>
+			    <div ng-if="recette.noteMoyenne != -1">
 				    <p>Note : {{recette.noteMoyenne}} / 5</p>
 			    </div>
 
 			    <div>
+			    	Votre note : 
 					<select ng-model="comData.noteUser"  ng-change="changerNote(comData.noteUser)" >
 						<option  value="1">1</option>
 						<option  value="2">2</option>
@@ -45,6 +46,7 @@
 			      	<p>
 				        {{commentaire.pseudo}}<br/>
 				        {{commentaire.update}}<br/>
+				        {{recette.note}} / 5<br/>
 				        <div ng-bind-html="showHtml(commentaire.value)"></div>
 			       	</p>
 			    </div>

@@ -3,8 +3,11 @@ body {
 	font-size: 20px;
 }
 
-h1, h2{
+h1{
 	font-family: "Origin", Helvetica, Arial, sans-serif;
-	font-size: 35px;
 	font-weight: bold;
+}
+
+.item h1{
+	overflow: visible;
 }

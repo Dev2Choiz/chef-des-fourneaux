@@ -1,21 +1,76 @@
 <ion-view view-title="Chef des fourneaux">
-  
-  <ion-content class="padding">
-    <h1>Bienvenue</h1>
 
-    <div class="list" ng-repeat="recette in recettesTop">
-      
-      <a class="item item-thumbnail-left" href="#/app/recetteSingle/{{recette.id_recette}}">
-        <img src="../../../../img/{{recette.img}}">
-        <h2>Pretty Hate Machine</h2>
-        <p>Nine Inch Nails</p>
-      </a>
+    <ion-content class="padding">
+        <h1>Bienvenue</h1>
+        <p>
+            <a class="button icon-right ion-chevron-right button-calm" href="#/app/facts">En savoir plus sur Nous ?</a>
+        </p>
+        <div class="list">
+            <div class="item item-divider">
+                <h1>Recettes à la Une</h1>
+            </div>
+            <div ng-repeat="recette in recettesTop">
+                <a class="item item-thumbnail-left" href="#/app/recetteSingle/{{recette.id_recette}}">
+                    <img src="{{urlImg + recette.img}}">
+                    <h2>{{recette.titre}}</h2>
+                    <!-- <p ng-bind-html="showHtml(recette.value)"></p> -->
+                </a>
+            </div>
+        </div>
 
-    </div>
-    <p>
-        <a class="button icon icon-right ion-chevron-right" href="#/app/facts">Scientific Facts</a>
-      </p>
-  </ion-content>
+        <div class="list">
+            <div class="item item-divider">
+                <h1>Nos Entrées</h1>
+            </div>
+            <div ng-repeat="recette in recettesEntree">
+                <a class="item item-thumbnail-right" href="#/app/recetteSingle/{{recette.id_recette}}">
+                    <img src="{{urlImg + recette.img}}">
+                    <h2>{{recette.titre}}</h2>
+                    <!-- <p ng-bind-html="showHtml(recette.value)"></p> -->
+                </a>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="item item-divider">
+                <h1>Nos Plats</h1>
+            </div>
+            <div ng-repeat="recette in recettesPlat">
+                <a class="item item-thumbnail-left" href="#/app/recetteSingle/{{recette.id_recette}}">
+                    <img src="{{urlImg + recette.img}}">
+                    <h2>{{recette.titre}}</h2>
+                    <!-- <p ng-bind-html="showHtml(recette.value)"></p> -->
+                </a>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="item item-divider">
+                <h1>Nos desserts</h1>
+            </div>
+            <div ng-repeat="recette in recettesDessert">
+                <a class="item item-thumbnail-right" href="#/app/recetteSingle/{{recette.id_recette}}">
+                    <img src="{{urlImg + recette.img}}">
+                    <h2>{{recette.titre}}</h2>
+                    <!-- <p ng-bind-html="showHtml(recette.value)"></p> -->
+                </a>
+            </div>
+        </div> 
+
+        <div class="list">
+            <div class="item item-divider">
+                <h1>Produits à la Une</h1>
+            </div>
+            <div ng-repeat="produit in produitsTop">
+                <a class="item item-thumbnail-left" href="#/app/produits">
+                    <img src="{{urlImg + produit.img}}">
+                    <h2>{{produit.value}}</h2>
+                </a>
+            </div>
+        </div>       
+        
+        
+    </ion-content>
 </ion-view>
 
 
@@ -30,7 +85,7 @@
       <p>A cockroach will live nine days without it's head, before it starves to death.</p>
       <p>Polar bears are left handed.</p>
       <p>
-        <a class="button icon ion-home" href="#/app/search"> Home</a>
+        <a class="button icon ion-home" href="#/app/home"> Retour à l'accueil</a>
         <a class="button icon icon-right ion-chevron-right" href="#/app/facts2">More Facts</a>
       </p>
     </ion-content>
@@ -47,7 +102,7 @@
       <p>$283,200 is the absolute highest amount of money you can win on Jeopardy.</p>
       <p>101 Dalmatians, Peter Pan, Lady and the Tramp, and Mulan are the only Disney cartoons where both parents are present and don't die throughout the movie.</p>
       <p>
-        <a class="button icon ion-home" href="#/app/search"> Home</a>
+        <a class="button icon ion-home" href="#/app/home"> Retour à l'accueil</a>
         <a class="button icon ion-chevron-left" href="#/app/facts"> Scientific Facts</a>
       </p>
     </ion-content>

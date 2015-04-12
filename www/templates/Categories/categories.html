@@ -3,66 +3,16 @@
         <div class="list">
             <div  ng-repeat="categorie in categories | orderBy:value">
                 <div class="item item-divider" ng-click="showRecettes= !showRecettes">
-                    <h2>{{categorie.value}}</h2>
-                    <img src="../../../../img/{{categorie.img}}" style="width:20%">
+                    <h2><strong>{{categorie.value}}</strong></h2>
+                    <img class="full-image" src="{{urlImg + categorie.img}}" style="width: 70%; display:block; margin-left:65px;" >
                     
                 </div>
                 <div ng-repeat="recette in categorie.recettesCat"  ng-show="showRecettes">
-                    <!-- <a class="item" ng-click="showRecette = !showRecette;">{{recette.titre}}</a>  -->
                     <a class="item"  href="#/app/recetteSingle/{{recette.id_recette}}" >{{recette.titre}}</a>
                     
                 </div>
+                <br/>
             </div>   
         </div>
     </ion-content>
 </ion-view>
-
-
-
-
-
-
-<!-- <ion-view view-title="Categories">
-    <ion-content class="padding">
-        <div class="list">
-            <div class="item item-divider" ng-repeat="categorie in categories | orderBy:value" ng-click="recettesByCategorie({{categorie.id_cat}});">
-                {{categorie.value}}
-                <div ng-repeat="recette in recettes">
-                    <a class="item" href="" ng-click="showRecette = !showRecette;">{{recette.titre}}</a>
-                    <div ng-show="showRecette">
-                        <div ng-bind-html="showHtml(recette.value)"></div>
-                        <p>{{recette.titre}}</p>
-                        <p><img src="../../../../img/{{recette.img}}" style="height:140px; width:140px;"></p>
-                        <p>{{recette.categorie}}</p>
-
-                        <div ng-repeat="ingredient in recette.ingredients">
-                            <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}</p>
-                        </div>
-
-                        <div ng-repeat="produit in recette.produits">
-                            <p>{{produit.value_produit}}
-                                <br/>
-                                <img src="../../../../img/{{produit.img}}" style="height:140px; width:140px;">
-                                {{produit.img}}
-                            </p>
-                        </div>
-
-                        <div ng-repeat="commentaire in recette.commentaires">
-                            <p>
-                                {{commentaire.pseudo}}
-                                <br/>
-                                {{commentaire.update}}
-                                <br/>
-                                <div ng-bind-html="showHtml(commentaire.value)"></div>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>   
-        </div>
-    </ion-content>
-</ion-view>
-
-
-
- -->
