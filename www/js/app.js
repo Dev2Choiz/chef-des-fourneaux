@@ -40,7 +40,8 @@ var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
             url: "/home",
             views: {
                 'home-tab': {
-                    templateUrl: "templates/home.html"
+                    templateUrl: "templates/home.html",
+                    controller: 'HomeController'
                 }
             }
         })

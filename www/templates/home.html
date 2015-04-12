@@ -2,6 +2,16 @@
   
   <ion-content class="padding">
     <h1>Bienvenue</h1>
+
+    <div class="list" ng-repeat="recette in recettesTop">
+      
+      <a class="item item-thumbnail-left" href="#/app/recetteSingle/{{recette.id_recette}}">
+        <img src="../../../../img/{{recette.img}}">
+        <h2>Pretty Hate Machine</h2>
+        <p>Nine Inch Nails</p>
+      </a>
+
+    </div>
     <p>
         <a class="button icon icon-right ion-chevron-right" href="#/app/facts">Scientific Facts</a>
       </p>
