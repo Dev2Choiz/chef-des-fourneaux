@@ -15,6 +15,7 @@ urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.ph
 var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
 
 .constant('urlImg', 'http://chefdesfourneaux-api.16mb.com/img/')
+//.constant('urlImg', '../../../../img/')
 
 .run(function($ionicPlatform, $rootScope, urlImg) {
     $ionicPlatform.ready(function() {
