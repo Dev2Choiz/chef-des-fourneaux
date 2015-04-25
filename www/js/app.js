@@ -7,15 +7,13 @@
 // 
 // , 'chefdesfourneaux.controllers'
 
-//urlWebService="http://localhost/webservice/public/index.php";
-urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.php";
-//urlImg = "../../../../img/";
-
+urlWebService="http://localhost/webservice/public/index.php";
+//urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.php";
 
 var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
 
-.constant('urlImg', 'http://chefdesfourneaux-api.16mb.com/img/')
-//.constant('urlImg', '../../../../img/')
+//.constant('urlImg', 'http://chefdesfourneaux-api.16mb.com/img/')
+.constant('urlImg', '../../../../img/')
 
 .run(function($ionicPlatform, $rootScope, urlImg) {
     $ionicPlatform.ready(function() {
