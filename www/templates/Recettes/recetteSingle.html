@@ -20,11 +20,15 @@
 			    <p>{{ingredient.ingredients}} : {{ingredient.value}} {{ingredient.unite}}<p>
 			    </div>
 			    
-			    <div ng-repeat="produit in recette.produits">
-				    <p>{{produit.value_produit}}<br/>
-				    	<img src="{{urlImg + produit.img}}" style="height:140px; width:140px;">
-				    </p>
+			    
+			    <div class="row">
+			    	<div class="col" ng-repeat="produit in recette.produits">
+			    		<a href="">{{produit.value_produit}}</a>
+				    	<img  src="{{urlImg + produit.img}}" style="height:140px; width:140px;">
+			    	</div>
 			    </div>
+				    
+			    
 
 			    <div ng-if="recette.noteMoyenne != -1">
 				    <p>Note : {{recette.noteMoyenne}} / 5</p>

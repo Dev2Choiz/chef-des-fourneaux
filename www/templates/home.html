@@ -62,7 +62,7 @@
                 <h1>Produits à la Une</h1>
             </div>
             <div ng-repeat="produit in produitsTop">
-                <a class="item item-thumbnail-left" href="#/app/produits">
+                <a class="item item-thumbnail-left" href="#/Produits/app/produitSingle/{{produit.id_produit}}">
                     <img src="{{urlImg + produit.img}}">
                     <h2>{{produit.value}}</h2>
                 </a>
