@@ -1,14 +1,18 @@
 
 chefdesfourneaux.service('ProduitsService', function($http){
 
-	//appelle la vue des recettes
+	/**
+	 * getAllProduits 				Recupére les produits auprès du webservice
+	 * @return 			object 		httpPromise
+	 */
 	function getAllProduits(){
-
+		// clé de l'objet json qu'on passera en paramètre à la méthode $http
 		var data = {
 			service 		: "Produit",
 			method		 	: "getAllProduits"
 		}
 
+		// Envoie la requète au webservice qui appelle la methode getAllProduits du service Produit
 		return $http({
 			method : 'post',
 			url : urlWebService,
@@ -16,26 +20,23 @@ chefdesfourneaux.service('ProduitsService', function($http){
 			data : $.param(data),
 			async:false,
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-		}).success(function(data) {
-			 console.log("valeur dans le success :",data);
-			 return "valeur qui vient du succes";
-
-
-		}).error(function(data, status, headers, config) {
-		    console.log("error",data);
-		    //false;
-		    return "valeur qui vient du error";
 		});
 	};
 
-	function getProduit(idProd){
 
+	/**
+	 * getProduit Récupère un produit auprès du webservice
+	 * @param 			 int 	 idProd identifiant du produit
+	 * @return 			 object  httpPromise
+	 */
+	function getProduit(idProd){
+		// clé de l'objet json qu'on passera en paramètre à la méthode $http
 		var data = {
 			service 		: "Produit",
 			method		 	: "getProduit",
 			id_produit		: idProd
 		}
-
+		// Envoie la requète au webservice qui appelle la methode getProduit du service Produit
 		return $http({
 			method : 'post',
 			url : urlWebService,
@@ -43,19 +44,14 @@ chefdesfourneaux.service('ProduitsService', function($http){
 			data : $.param(data),
 			async:false,
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-		}).success(function(data) {
-			 console.log("valeur dans le success :",data);
-			 return "valeur qui vient du succes";
-
-
-		}).error(function(data, status, headers, config) {
-		    console.log("error",data);
-		    //false;
-		    return "valeur qui vient du error";
 		});
 	};
 
-	function getTopProduits(){		//jquery
+	/**
+	 * getTopProduits  Récupère le top 3 de tout les produits auprès du webservice
+	 * @return 			 object  httpPromise
+	 */
+	function getTopProduits(){
 		var jsonData = {
 			service 		: "Produit",
 			method		 	: "getTopProduits",

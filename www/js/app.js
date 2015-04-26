@@ -4,16 +4,17 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-// 
-// , 'chefdesfourneaux.controllers'
 
-urlWebService="http://localhost/webservice/public/index.php";
-//urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.php";
+// Choix entre la connection au web service local ou en ligne
+urlWebService="http://localhost/webservice/public/index.php";       // local
+//urlWebService = "http://chefdesfourneaux-api.16mb.com/webservice/Public/index.php";       // en ligne
 
 var chefdesfourneaux = angular.module('chefdesfourneaux', ['ionic'])
 
-//.constant('urlImg', 'http://chefdesfourneaux-api.16mb.com/img/')
-.constant('urlImg', '../../../../img/')
+
+// Definition de la constante urlImg 
+//.constant('urlImg', 'http://chefdesfourneaux-api.16mb.com/img/')  // en ligne
+.constant('urlImg', '../../../../img/')     // en local
 
 .run(function($ionicPlatform, $rootScope, urlImg) {
     $ionicPlatform.ready(function() {

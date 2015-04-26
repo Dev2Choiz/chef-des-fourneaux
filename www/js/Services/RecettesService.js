@@ -16,15 +16,6 @@ chefdesfourneaux.service('RecettesService', function($http){
 			data : $.param(data),
 			async:false,
 			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-		}).success(function(data) {
-			 console.log("valeur dans le success :",data);
-			 return "valeur qui vient du succes";
-
-
-		}).error(function(data, status, headers, config) {
-		    console.log("error",data);
-		    //false;
-		    return "valeur qui vient du error";
 		});
 	};
 
